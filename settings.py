@@ -18,3 +18,9 @@ offsets = {
     "Strome Point": [225, 290, 1.135, 1.135],
     "Broken Moon": [115, 32, 1.015, 1.015]
 }
+tran = {
+    '奥林匹斯': "Olympus",
+    '世界尽头': "World's Edge",
+    "风暴点": "Strome Point",
+    '残月': "Broken Moon"
+}

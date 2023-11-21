@@ -1,7 +1,11 @@
 import cv2
 import re
 
-def draw(x_offset,y_offset,x_adj_factor,y_adj_factor):
+
+from settings import *
+
+
+def draw(img_file,file_name, x_offset, y_offset, x_adj_factor, y_adj_factor):
     coordinates = []
 
     max_x = 45056
@@ -21,7 +25,7 @@ def draw(x_offset,y_offset,x_adj_factor,y_adj_factor):
         z = None
         radius = None
 
-    with open('./desert/desertlands_info_survival_loot_zone_hotzone') as f:
+    with open('./map_data/'+file_name) as f:
         thisline = InvalidEndZone()
         for line in f.readlines():
             if "origin" in line:
@@ -39,7 +43,7 @@ def draw(x_offset,y_offset,x_adj_factor,y_adj_factor):
                 coordinates.append(thisline)
                 thisline = InvalidEndZone()
 
-    img = cv2.imread('strome point loot zone.png')
+    img = cv2.imread(f'{img_file}.png')
 
     for restriction in coordinates:
         x_coord = int(((restriction.x + abs(max_x)) / scale_x) / x_adj_factor)
@@ -47,4 +51,3 @@ def draw(x_offset,y_offset,x_adj_factor,y_adj_factor):
         img = cv2.circle(img, (x_coord + x_offset, y_coord + y_offset), int(restriction.radius / 24), (0, 250, 0), 7)
 
     cv2.imwrite("strome point loot zone.png", img)
-

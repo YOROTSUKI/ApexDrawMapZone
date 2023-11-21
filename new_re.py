@@ -1,5 +1,6 @@
 import re
 import json
+import os
 
 with open(r'script.ent', 'r', encoding='UTF-8') as F:
     f = F.read()
@@ -9,6 +10,8 @@ with open(r'script.ent', 'r', encoding='UTF-8') as F:
     json_str = re.sub(pattern, '', text)
     with open('map_data.json', 'w', encoding='utf-8') as w_f:
         w_f.write(json_str)
+
+[os.remove('./map_data/'+i) for i in os.listdir('./map_data')]
 
 with open('map_data.json', 'r', encoding='utf-8') as rf:
     read_json = eval(rf.read())
