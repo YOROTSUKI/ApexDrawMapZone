@@ -35,13 +35,13 @@ for js in read_json:
         origin = js.get('origin')
         with open('./map_data/script_survival_next_zone_survey_beacon', 'a+', encoding='utf-8') as File:
             File.write(f'"origin" "{origin}"' + "\n")
-            File.write(f'"script_radius" "{2}"' + "\n")
+            File.write(f'"script_radius" "{20}"' + "\n")
 
     if 'script_survival_survey_beacon' == js.get("editorclass"):
         origin = js.get('origin')
         with open('./map_data/script_survival_survey_beacon', 'a+', encoding='utf-8') as File:
             File.write(f'"origin" "{origin}"' + "\n")
-            File.write(f'"script_radius" "{2}"' + "\n")
+            File.write(f'"script_radius" "{20}"' + "\n")
 
     if 'info_survival_loot_zone' == js.get("editorclass") and js.get("zone_class") == 'zone_medium':
         origin = js.get('origin')
@@ -118,12 +118,12 @@ for js in read_json:
         # script_radius = js.get("script_radius")
         with open('./map_data/script_survival_crafting_workbench_cluster', 'a+', encoding='utf-8') as File:
             File.write(f'"origin" "{origin}"' + "\n")
-            File.write(f'"script_radius" "{5}"' + "\n")
+            File.write(f'"script_radius" "{20}"' + "\n")
 
     if js.get("editorclass") == 'script_survival_crafting_harvester':
         origin = js.get('origin')
         # script_radius = js.get("script_radius")
         with open('./map_data/script_survival_crafting_harvester', 'a+', encoding='utf-8') as File:
             File.write(f'"origin" "{origin}"' + "\n")
-            File.write(f'"script_radius" "{5}"' + "\n")
+            File.write(f'"script_radius" "{20}"' + "\n")
 

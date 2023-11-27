@@ -47,6 +47,3 @@ def draw(data_file, input_img, output_img, x_offset, y_offset, x_adj_factor, y_a
 
     cv2.imwrite(output_img, img)
 
-data_file_list = os.listdir('./map_data')
-for i in data_file_list:
-    print(i)
