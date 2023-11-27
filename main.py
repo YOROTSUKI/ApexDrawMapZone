@@ -24,6 +24,6 @@ else:
 
 
 map_img_filename = './map_image/mp_rr_tropic_island_mu2.png'
-# os.system('python new_re.py')
+os.system('python new_re.py')
 for data_file,data_color in color_ring.items():
     draw(map_img_filename, data_file, map_offset[0], map_offset[1], map_offset[2], map_offset[3],data_color)
