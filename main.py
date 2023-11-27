@@ -4,7 +4,7 @@ from draw_map import *
 from settings import *
 
 # English man? OR Chinese man?
-is_en = True
+is_en = False
 
 if is_en:
     map_dice = {}
@@ -22,8 +22,8 @@ else:
     input_map_index = int(input('选择数据对应的地图(输入序号即可)').strip())
     map_offset = offsets[tran[map_dice[input_map_index]]]
 
-
-map_img_filename = './map_image/mp_rr_tropic_island_mu2.png'
+path = './map_image/'
+map_img_filename = 'mp_rr_tropic_island_mu2.png'
 os.system('python new_re.py')
 for data_file,data_color in color_ring.items():
-    draw(map_img_filename, data_file, map_offset[0], map_offset[1], map_offset[2], map_offset[3],data_color)
+    draw(path+map_img_filename, data_file, map_offset[0], map_offset[1], map_offset[2], map_offset[3], data_color)
