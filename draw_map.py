@@ -47,10 +47,15 @@ def draw(img_file,file_name, x_offset, y_offset, x_adj_factor, y_adj_factor,colo
         img = cv2.imread(f'{img_file}')
     else:
         img = cv2.imread(output_file)
-
-    for restriction in coordinates:
-        x_coord = int(((restriction.x + abs(max_x)) / scale_x) / x_adj_factor)
-        y_coord = int(((restriction.y + abs(max_y)) / scale_y) / y_adj_factor)
-        img = cv2.circle(img, (x_coord + x_offset, y_coord + y_offset), int(restriction.radius / 24), color, 7)
+    if file_name not in is_use_special_size:
+        for restriction in coordinates:
+            x_coord = int(((restriction.x + abs(max_x)) / scale_x) / x_adj_factor)
+            y_coord = int(((restriction.y + abs(max_y)) / scale_y) / y_adj_factor)
+            img = cv2.circle(img, (x_coord + x_offset, y_coord + y_offset), int(restriction.radius / 24), color, 7)
+    else:
+        for restriction in coordinates:
+            x_coord = int(((restriction.x + abs(max_x)) / scale_x) / x_adj_factor)
+            y_coord = int(((restriction.y + abs(max_y)) / scale_y) / y_adj_factor)
+            img = cv2.circle(img, (x_coord + x_offset, y_coord + y_offset), int(restriction.radius / 24), color, 20)
 
     cv2.imwrite(output_file, img)

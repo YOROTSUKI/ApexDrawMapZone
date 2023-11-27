@@ -9,10 +9,10 @@ color_ring = {
     'info_survival_loot_zone_ultra': (0, 0, 255),
     'info_survival_weapon_location': (0, 0, 255),
     'survival_lootbin': (0, 250, 0),
-    'script_survival_crafting_harvester': (255, 150, 0),
-    'script_survival_crafting_workbench_cluster': (0, 255, 0),
+    'script_survival_crafting_harvester': (0, 250, 0),
+    'script_survival_crafting_workbench_cluster': (0, 0, 255),
     'script_survival_next_zone_survey_beacon': (0, 255, 0),
-    'script_survival_survey_beacon': (0, 255, 0)
+    'script_survival_survey_beacon': (0,0 , 255)
 }
 output_file_name = {
     "info_survival_circle_end_location": 'ring_location',
@@ -39,6 +39,12 @@ is_need_special = [
     'survival_lootbin',
     'script_survival_crafting_workbench_cluster',
     'info_survival_loot_zone_ultra',
+    'script_survival_survey_beacon'
+]
+is_use_special_size =[
+    'script_survival_crafting_harvester',
+    'script_survival_crafting_workbench_cluster',
+    'script_survival_next_zone_survey_beacon',
     'script_survival_survey_beacon'
 ]
 offsets = {
